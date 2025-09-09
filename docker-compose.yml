@@ -1,0 +1,11 @@
+networks:
+  local:
+
+services:
+  spark:
+    image: quay.io/jupyter/pyspark-notebook:spark-3.5.3
+    ports:
+      - 127.0.0.1:8888:8888
+    volumes:
+      - ./:/home/jovyan/work
+      
