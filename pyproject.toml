@@ -13,11 +13,17 @@ dependencies = [
     "py4j (==0.10.9.7)"
 ]
 
+[tool.poetry.group.test.dependencies]
+pytest = "^8.4.2"
+nbmake = "^1.5.5"
+
+[tool.poetry.group.jupyter.dependencies]
+# https://python-poetry.org/docs/dependency-specification/#using-environment-markers
+ipython = [
+    {version = "9.5.0", markers = "python_version >= '3.11'"},
+    {version = "<9.5.0", markers = "python_version < '3.11'"}
+]
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
-
-[tool.poetry.group.dev.dependencies]
-pytest = "^8.4.2"
-nbmake = "^1.5.5"
