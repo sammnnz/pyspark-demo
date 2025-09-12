@@ -9,4 +9,11 @@ services:
     working_dir: /home/jovyan/work
     volumes:
       - ./:/home/jovyan/work
-      
+
+  spark-poetry:
+    build:
+      context: .
+    ports:
+      - 127.0.0.1:8888:8888
+    volumes:
+      - ./:/home/jovyan/work
