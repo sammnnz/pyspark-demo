@@ -25,7 +25,7 @@ def get_all_rows_joins_unsafe(
         The `mode` argument specifies the dataframe relative to which the rows will be retrieved.
     """
     df = join_df\
-        .join(df1, getattr(df1, df1_pk) == getattr(join_df, join_df1_pk), "right_outer")\
+        .join(df1, getattr(df1, df1_pk) == getattr(join_df, join_df1_pk), "full")\
         .join(df2, getattr(df2, df2_pk) == getattr(join_df, join_df2_pk), mode)\
         .drop(join_df1_pk, join_df2_pk)
     
