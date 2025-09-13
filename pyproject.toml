@@ -10,7 +10,18 @@ readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
     "pyspark (==3.5.3)",
-    "py4j (==0.10.9.7)"
+    "py4j (==0.10.9.7)",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest (>=8.4.2,<9.0.0)",
+    "nbmake (>=1.5.5,<2.0.0)"
+]
+
+[tool.poetry]
+packages = [
+    {include = "pyspark_utils", from = "src"},
 ]
 
 [tool.poetry.group.test.dependencies]
