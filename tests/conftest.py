@@ -19,5 +19,8 @@ def spark_data():
     product_category_df = spark.read.csv(
         os.path.join("sample_data", "product_category.csv"), header=True
         )
+    product_df.show()
+    category_df.show()
+    product_category_df.show()
     yield product_df, category_df, product_category_df
     spark.stop()
